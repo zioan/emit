@@ -1,17 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <comp :number="number" @incNum="incrementNumber" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Comp from "./components/Comp.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { Comp },
+  data() {
+    return {
+      number: 3,
+    };
+  },
+  methods: {
+    incrementNumber() {
+      this.number += 2;
+    },
+  },
+};
 </script>
 
 <style>
