@@ -1,5 +1,9 @@
 <template>
-  <comp :number="number" @incNum="incrementNumber" />
+  <comp
+    :number="number"
+    @incNum="incrementNumber"
+    :incrementNr="incrementCallBackFunction"
+  />
 </template>
 
 <script>
@@ -15,6 +19,9 @@ export default {
   },
   methods: {
     incrementNumber() {
+      this.number += 2;
+    },
+    incrementCallBackFunction() {
       this.number += 2;
     },
   },
